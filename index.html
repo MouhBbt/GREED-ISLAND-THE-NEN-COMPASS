@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greed Island: The Nen Compass</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Challenge 02</p>
+        <h1>Greed Island: The Nen Compass</h1>
+        <p class="subtitle">Reach the hidden center before the Shadow Hunter. Fog hides the maze, but memory reveals the way.</p>
+      </div>
+      <button id="newGameBtn" class="secondary">New Maze</button>
+    </section>
+
+    <section id="setup" class="panel setup">
+      <h2>Choose your Nen affinity</h2>
+      <p>Your affinity changes the movement cost of each room type. Lower cost means faster movement.</p>
+      <div id="affinityButtons" class="affinity-grid"></div>
+      <button id="startBtn" class="primary">Start Trial</button>
+    </section>
+
+    <section id="game" class="game hidden">
+      <aside class="panel sidebar">
+        <div id="status" class="status">Choose your affinity to begin.</div>
+        <div id="compass" class="compass"></div>
+        <div class="legend" id="legend"></div>
+        <h3>Shortest visible path</h3>
+        <p id="pathInfo">A* path recalculates after every legal move.</p>
+        <h3>Rules</h3>
+        <ul>
+          <li>Click an adjacent walkable cell to move.</li>
+          <li>Only cells within radius 2 are visible.</li>
+          <li>Visited and revealed cells remain mapped.</li>
+          <li>The Shadow Hunter starts opposite you and hunts the center.</li>
+        </ul>
+      </aside>
+      <section class="board-wrap panel">
+        <canvas id="grid" width="720" height="720" aria-label="20 by 20 Nen maze grid"></canvas>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
